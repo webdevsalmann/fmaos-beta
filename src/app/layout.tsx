@@ -2,6 +2,9 @@ import type { Metadata } from "next";
 import { Inter, Rubik } from "next/font/google";
 import "./globals.css";
 import Providers from "@/components/providers/Providers";
+import Header from "@/components/layouts/Header";
+import { cn } from "@/lib/utils";
+import Layout from "@/components/layouts/Layout";
 
 const rubik = Rubik({ subsets: ["latin"] });
 
@@ -17,9 +20,14 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <Providers>
-        <body className={rubik.className}>{children}</body>
-      </Providers>
+      <body className={cn(rubik.className, "relative mx-auto flex flex-col")}>
+        <Providers>
+          <Header />
+          <Layout className="flex-1">
+            {children}
+          </Layout>
+        </Providers>
+      </body>
     </html>
   );
 }

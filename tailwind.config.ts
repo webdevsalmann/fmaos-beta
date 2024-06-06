@@ -7,7 +7,7 @@ const config = {
     './components/**/*.{ts,tsx}',
     './app/**/*.{ts,tsx}',
     './src/**/*.{ts,tsx}',
-	],
+  ],
   prefix: "",
   theme: {
     container: {
@@ -18,6 +18,17 @@ const config = {
       },
     },
     extend: {
+      spacing: {
+        '2xs': '0.5rem'/* 8px */,
+        'xs': '0.75rem'/* 12px */,
+        'sm': '1rem'/* 16px */,
+        'base': '1.25rem'/* 20px */,
+        'lg': '1.5rem'/* 24px */,
+        'xl': '1.75rem'/* 28px */,
+        '2xl': '2rem'/* 32px */,
+        '3xl': '2.25rem'/* 36px */,
+        'block': '3rem'/* 48px */,
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
@@ -74,7 +85,10 @@ const config = {
       },
     },
   },
-  plugins: [require("tailwindcss-animate")],
+  plugins: [
+    require("tailwindcss-animate"),
+    require('@tailwindcss/typography')
+  ],
 } satisfies Config
 
 export default config
