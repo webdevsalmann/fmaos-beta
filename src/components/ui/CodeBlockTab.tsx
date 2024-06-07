@@ -1,9 +1,9 @@
 "use client"
 import { ReactNode } from "react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import CopyToClipboard from "./CopyToClipboard";
 import SyntaxHighlighter from 'react-syntax-highlighter';
 import { nightOwl } from "react-syntax-highlighter/dist/esm/styles/hljs";
+import CopyToClipboardButton from "./CopyToClipboardButton";
 
 export default function CodeBlockTab({ blockId, preview, jsx, tsx }: {
     blockId: string, preview: ReactNode, jsx: any, tsx: any
@@ -21,14 +21,18 @@ export default function CodeBlockTab({ blockId, preview, jsx, tsx }: {
             </TabsContent>
 
             <TabsContent value={`jsx-${blockId}`}>
-                <CopyToClipboard text={jsx} />
+                <div className="absolute top-sm right-sm flex flex-wrap gap-2">
+                    <CopyToClipboardButton text={jsx} />
+                </div>
                 <SyntaxHighlighter language="javascript" style={nightOwl} wrapLongLines>
                     {jsx}
                 </SyntaxHighlighter>
             </TabsContent>
 
             <TabsContent value={`tsx-${blockId}`}>
-                <CopyToClipboard text={tsx} />
+                <div className="absolute top-sm right-sm flex flex-wrap gap-2">
+                    <CopyToClipboardButton text={tsx} />
+                </div>
                 <SyntaxHighlighter language="typescript" style={nightOwl} wrapLongLines>
                     {tsx}
                 </SyntaxHighlighter>

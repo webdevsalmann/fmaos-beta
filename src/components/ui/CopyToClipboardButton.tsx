@@ -2,12 +2,14 @@ import React from 'react';
 import { Button } from '@/components/ui/button';
 import { toast } from './use-toast';
 import { Copy } from 'lucide-react';
+import { cn } from '@/lib/utils';
 
-interface CopyToClipboardProps {
+interface CopyToClipboardButtonProps {
     text: any;
+    className?: string;
 }
 
-const CopyToClipboard: React.FC<CopyToClipboardProps> = ({ text }) => {
+const CopyToClipboardButton: React.FC<CopyToClipboardButtonProps> = ({ className, text }) => {
     const copyToClipboard = () => {
         navigator.clipboard.writeText(text)
             .then(() => {
@@ -25,10 +27,10 @@ const CopyToClipboard: React.FC<CopyToClipboardProps> = ({ text }) => {
     };
 
     return (
-        <Button className='absolute top-sm right-sm size-6 sm:size-8' variant="outline" size='icon' onClick={copyToClipboard}>
-            <Copy className='size-4 pointer-events-none' />
+        <Button className={cn("size-6 sm:size-8", className)} variant="outline" size='icon' onClick={copyToClipboard}>
+            <Copy className='size-3 sm:size-4 pointer-events-none' />
         </Button>
     );
 };
 
-export default CopyToClipboard;
+export default CopyToClipboardButton;
