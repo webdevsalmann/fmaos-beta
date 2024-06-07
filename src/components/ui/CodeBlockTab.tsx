@@ -1,13 +1,16 @@
-"use client"
 import { ReactNode } from "react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import SyntaxHighlighter from 'react-syntax-highlighter';
 import { nightOwl } from "react-syntax-highlighter/dist/esm/styles/hljs";
 import CopyToClipboardButton from "./CopyToClipboardButton";
+import getCodeFile from "@/components/helpers/getCodeFile";
+import DownloadFileButton from "@/components/ui/DownloadFileButton";
 
-export default function CodeBlockTab({ blockId, preview, jsx, tsx }: {
-    blockId: string, preview: ReactNode, jsx: any, tsx: any
+export default async function CodeBlockTab({ blockId, preview, jsxFilePath, tsxFilePath }: {
+    blockId: string, preview: ReactNode, jsxFilePath: any, tsxFilePath: any
 }) {
+    const jsxFile : string = await getCodeFile(jsxFilePath)
+    const tsxFile : string = await getCodeFile(tsxFilePath)
     return (
         <Tabs defaultValue={`preview-${blockId}`}>
             <TabsList>
@@ -22,19 +25,21 @@ export default function CodeBlockTab({ blockId, preview, jsx, tsx }: {
 
             <TabsContent value={`jsx-${blockId}`}>
                 <div className="absolute top-sm right-sm flex flex-wrap gap-2">
-                    <CopyToClipboardButton text={jsx} />
+                    <CopyToClipboardButton text={jsxFile} />
+                    <DownloadFileButton filePath={jsxFilePath} />
                 </div>
                 <SyntaxHighlighter language="javascript" style={nightOwl} wrapLongLines>
-                    {jsx}
+                    {jsxFile}
                 </SyntaxHighlighter>
             </TabsContent>
 
             <TabsContent value={`tsx-${blockId}`}>
                 <div className="absolute top-sm right-sm flex flex-wrap gap-2">
-                    <CopyToClipboardButton text={tsx} />
+                    <CopyToClipboardButton text={tsxFile} />
+                    <DownloadFileButton filePath={tsxFilePath} />
                 </div>
                 <SyntaxHighlighter language="typescript" style={nightOwl} wrapLongLines>
-                    {tsx}
+                    {tsxFile}
                 </SyntaxHighlighter>
             </TabsContent>
         </Tabs>
