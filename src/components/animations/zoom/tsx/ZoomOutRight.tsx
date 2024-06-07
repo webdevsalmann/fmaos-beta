@@ -7,7 +7,7 @@ interface ZoomProps extends MotionProps {
 }
 
 const variants = {
-    hidden: { opacity: 0, scale: 1.5, x: -100 },
+    hidden: { opacity: 0, scale: 1.5, x: -fmaosConfig.initialOffset },
     visible: { opacity: 1, scale: 1, x: 0 }
 };
 
