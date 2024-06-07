@@ -9,14 +9,14 @@ export default function Sidebar({ className }: {
   return (
     <SidebarWrapper className={className}>
       <div className="sticky top-0">
-        <ScrollArea className="h-[calc(100vh_-_40px)]">
+        <ScrollArea className="h-[calc(100vh_-_100px)]">
           {navigationDatas.map(item => (
             <nav className="mt-base space-y-2xs last-of-type:mb-base" key={"Sidebar" + item.id}>
-              <Link className="text-lg font-semibold" href={item.href}>{item.category}</Link>
+              <Link className="text-lg font-semibold capitalize" href={item.href}>{item.category}</Link>
               <ul className="space-y-2xs">
                 {item.subCategories.map(item => (
                   <li key={"Sidebar" + item.id}>
-                    <Link className="text-muted-foreground text-sm hover:text-primary" href={item.href}>
+                    <Link className="text-muted-foreground text-sm hover:text-primary capitalize" href={item.href}>
                       {item.title}
                     </Link>
                   </li>

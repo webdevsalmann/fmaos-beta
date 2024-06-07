@@ -1,3 +1,4 @@
+
 export const fmaosConfig = {
     initialOffset: 50,
     transition: { type:"spring" },

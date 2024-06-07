@@ -2,7 +2,7 @@ import { cn } from "@/lib/utils"
 
 export default function MainContent({ children, className }: {
   children: React.ReactNode,
-  className: string
+  className?: string
 }) {
   // w-full min-w-full max-w-full
   return (
