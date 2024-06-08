@@ -1,16 +1,18 @@
 "use client"
 import { MotionProps, motion } from 'framer-motion';
-import { fmaosConfig } from '@/lib/fmaos/config';
+import { useFmaosConfig } from '@/components/providers/FmaosConfigProvider';
 
-const variants = {
+const variants = (initialOffset) => ({
     hidden: { opacity: 0, rotateX: -90 },
     visible: { opacity: 1, rotateX: 0 }
-};
+});
 
 export default function FlipUp({ children, ...props }) {
+    const { fmaosConfig } = useFmaosConfig();
+
     return (
         <motion.div
-            variants={variants}
+            variants={variants(Number(fmaosConfig.initialOffset))}
             initial={props.initial ?? "hidden"}
             whileInView={props.whileInView ?? "visible"}
             transition={props.transition ?? fmaosConfig.transition}

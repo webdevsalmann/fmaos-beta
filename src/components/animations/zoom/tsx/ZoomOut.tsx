@@ -1,20 +1,22 @@
 "use client"
 import { motion, MotionProps } from 'framer-motion';
-import { fmaosConfig } from '@/lib/fmaos/config';
+import { useFmaosConfig } from '@/components/providers/FmaosConfigProvider';
 
 interface ZoomProps extends MotionProps {
     children: React.ReactNode;
 }
 
-const variants = {
+const variants = (initialOffset: number) => ({
     hidden: { scale: 1.5 },
     visible: { scale: 1 }
-};
+});
 
 export default function ZoomOut({ children, ...props }: ZoomProps) {
+    const { fmaosConfig } = useFmaosConfig();
+
     return (
         <motion.div
-            variants={variants}
+            variants={variants(Number(fmaosConfig.initialOffset))}
             initial={props.initial ?? "hidden"}
             whileInView={props.whileInView ?? "visible"}
             transition={props.transition ?? fmaosConfig.transition}

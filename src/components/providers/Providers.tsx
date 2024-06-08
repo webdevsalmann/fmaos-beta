@@ -1,8 +1,7 @@
 "use client"
 import { Toaster } from "@/components/ui/toaster"
 import ThemeProvider from "@/components/providers/ThemeProvider"
-import { FmaosConfigProvider } from "@/components/providers/fmaosConfigProvider"
-
+import { FmaosConfigProvider } from "@/components/providers/FmaosConfigProvider"
 
 export default function Providers({ children }: { children: React.ReactNode }) {
     return (

@@ -1,20 +1,22 @@
 "use client"
 import { motion, MotionProps } from 'framer-motion';
-import { fmaosConfig } from '@/lib/fmaos/config';
+import { useFmaosConfig } from '@/components/providers/FmaosConfigProvider';
 
 interface FlipProps extends MotionProps {
     children: React.ReactNode;
 }
 
-const variants = {
+const variants = (initialOffset: number) => ({
     hidden: { opacity: 0, rotateY: -90 },
     visible: { opacity: 1, rotateY: 0 }
-};
+});
 
 export default function FlipRight({ children, ...props }: FlipProps) {
+    const { fmaosConfig } = useFmaosConfig();
+
     return (
         <motion.div
-            variants={variants}
+            variants={variants(Number(fmaosConfig.initialOffset))}
             initial={props.initial ?? "hidden"}
             whileInView={props.whileInView ?? "visible"}
             transition={props.transition ?? fmaosConfig.transition}
