@@ -1,8 +1,8 @@
 "use client"
 import React from 'react';
-import { Button } from '@/components/ui/button';
-import { toast } from './use-toast';
 import { Copy } from 'lucide-react';
+import { Button } from '@/components/ui/button';
+import { toast } from '@/components/ui/use-toast';
 import { cn } from '@/lib/utils';
 
 interface CopyToClipboardButtonProps {

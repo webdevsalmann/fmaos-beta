@@ -1,5 +1,5 @@
 import navigationDatas from "@/lib/consts/navigationDatas"
-import SidebarWrapper from "@/components/layouts/wrapper/SidebarWrapper"
+import SidebarWrapper from "@/components/layouts/sidebar/SidebarWrapper"
 import Link from "next/link"
 
 export default function Sidebar({ className }: {

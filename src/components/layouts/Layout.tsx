@@ -1,9 +1,10 @@
 import React from "react";
-import Footer from "./Footer";
+import Footer from "./footer/Footer";
 import { cn } from "@/lib/utils";
-import MainContent from "./MainContent";
-import Sidebar from "./Sidebar";
-import ConfigController from "./ConfigController";
+import MainContent from "./maincontent/MainContent";
+import Sidebar from "./sidebar/Sidebar";
+import Header from "./header/Header";
+import ConfigBar from "./configbar/ConfigBar";
 
 export default function Layout({ children, className }: {
   children: React.ReactNode,
@@ -12,14 +13,17 @@ export default function Layout({ children, className }: {
   return (
     <div className={cn("relative w-full min-h-[calc(100vh_-_40px)] flex", className)}>
       <Sidebar />
-      <div className="relative flex w-full flex-1">
-        <div className="flex w-fit flex-col flex-1">
-          <MainContent className="w-full">
-            {children}
-          </MainContent>
-          <Footer />
+      <div className="relative flex-1">
+        <Header />
+        <div className="flex w-full">
+          <div className="flex w-fit flex-col flex-1">
+            <MainContent className="w-full">
+              {children}
+            </MainContent>
+          </div>
+          <ConfigBar />
         </div>
-        <ConfigController />
+        <Footer />
       </div>
     </div>
   )

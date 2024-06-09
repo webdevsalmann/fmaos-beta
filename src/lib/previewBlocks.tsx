@@ -1,6 +1,5 @@
-import CodeBlockTab from "@/components/ui/CodeBlockTab";
+import CodeBlockTab from "@/components/layouts/maincontent/CodeBlockTab";
 import demoDatas from "./demoDatas";
-import getCodeFile from "@/components/helpers/getCodeFile";
 
 const previewBlocks = {
     fadeUp: <CodeBlockTab

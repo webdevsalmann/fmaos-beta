@@ -12,7 +12,6 @@ interface FmaosConfigProps {
     initialOffset: number;
     transition: object;
     viewport: object;
-
     type?: string;
     stiffness?: number;
     damping?: number;
@@ -24,7 +23,6 @@ interface FmaosConfigProps {
     repeatType?: string;
     easing?: string;
     once?: boolean;
-
     margin?: string;
     amount?: "some" | "all";
 }
@@ -33,18 +31,16 @@ const initialFmaosConfig: FmaosConfigProps = {
     initialOffset: 50,
     transition: { type: "spring" },
     viewport: { once: false },
-
     type: "spring",
-    stiffness: 0,
-    damping: 0,
-    mass: 0,
-    duration: 0,
+    stiffness: 100,
+    damping: 10,
+    mass: 1,
+    duration: 0.3,
     delay: 0,
     repeat: 0,
     repeatType: "loop",
     repeatDelay: 0,
     easing: "easeIn",
-
     once: false,
     amount: "all",
 };
@@ -59,7 +55,6 @@ const initialToggles = {
     includeRepeat: false,
     includeRepeatType: false,
     includeEasing: false,
-
     includeOnce: true,
     includeAmount: false,
 };

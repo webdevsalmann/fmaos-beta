@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Inter, Rubik } from "next/font/google";
 import "./globals.css";
 import Providers from "@/components/providers/Providers";
-import Header from "@/components/layouts/Header";
+import Header from "@/components/layouts/header/Header";
 import { cn } from "@/lib/utils";
 import Layout from "@/components/layouts/Layout";
 
@@ -22,7 +22,6 @@ export default function RootLayout({
     <html lang="en">
       <body className={cn(rubik.className, "relative mx-auto flex flex-col")}>
         <Providers>
-          <Header />
           <Layout className="flex-1">
             {children}
           </Layout>

@@ -7,7 +7,7 @@ export default function MainContent({ children, className }: {
   // w-full min-w-full max-w-full
   return (
     <main className={cn("p-base w-full", className)}>
-      <article className="prose prose-slate dark:prose-invert prose-pre:my-0 overflow-hidden">
+      <article className="prose w-full max-w-full prose-slate dark:prose-invert prose-pre:my-0 overflow-hidden">
         {children}
       </article>
     </main>

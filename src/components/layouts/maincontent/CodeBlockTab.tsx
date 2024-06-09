@@ -2,9 +2,9 @@ import { ReactNode } from "react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import SyntaxHighlighter from 'react-syntax-highlighter';
 import { nightOwl } from "react-syntax-highlighter/dist/esm/styles/hljs";
-import CopyToClipboardButton from "./CopyToClipboardButton";
+import CopyToClipboardButton from "@/components/ui/demo-objects/CopyToClipboardButton";
 import getCodeFile from "@/components/helpers/getCodeFile";
-import DownloadFileButton from "@/components/ui/DownloadFileButton";
+import DownloadFileButton from "@/components/ui/demo-objects/DownloadFileButton";
 
 export default async function CodeBlockTab({ blockId, preview, jsxFilePath, tsxFilePath }: {
     blockId: string, preview: ReactNode, jsxFilePath: any, tsxFilePath: any

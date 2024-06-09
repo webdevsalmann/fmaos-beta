@@ -1,8 +1,6 @@
 "use client";
 import React, { ChangeEvent, useCallback } from 'react';
-import ControlWrapper from '@/components/layouts/wrapper/ControlWrapper';
-import ControllerWrapper from '@/components/layouts/wrapper/ControllerWrapper';
-import { cn } from '@/lib/utils';
+import ControlWrapper from '@/components/layouts/configbar/ControlWrapper';
 import { Label } from '@/components/ui/label';
 import { Input } from '@/components/ui/input';
 import InputControl from '@/components/ui/InputControl';
@@ -23,16 +21,18 @@ const ConfigController = ({ className }: { className?: string }) => {
 
 
     return (
-        <ControllerWrapper className={cn(className)}>
-            <ControlWrapper className='grid grid-cols-2 gap-base items-center'>
-                <Label htmlFor='initialOffset'>Initial Offset</Label>
-                <Input
-                    type="number"
-                    name="initialOffset"
-                    id="initialOffset"
-                    value={fmaosConfig.initialOffset}
-                    onChange={handleInputChangeNumber}
-                />
+        <div className="divide-y">
+            <ControlWrapper>
+                <div className="p-2 bg-muted dark:bg-muted/50 grid grid-cols-2 gap-base items-center rounded-sm">
+                    <Label htmlFor='initialOffset'>Initial Offset</Label>
+                    <Input
+                        type="number"
+                        name="initialOffset"
+                        id="initialOffset"
+                        value={fmaosConfig.initialOffset}
+                        onChange={handleInputChangeNumber}
+                    />
+                </div>
             </ControlWrapper>
 
             <ControlWrapper>
@@ -172,7 +172,7 @@ const ConfigController = ({ className }: { className?: string }) => {
                 />
 
             </ControlWrapper>
-        </ControllerWrapper>
+        </div>
     );
 };
 

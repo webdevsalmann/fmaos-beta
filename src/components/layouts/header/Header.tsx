@@ -1,5 +1,5 @@
 import { ThemeToggleButton } from "@/components/ui/ThemeToggleButton";
-import SearchCommand from "@/components/layouts/SearchCommand";
+import SearchCommand from "@/components/layouts/header/SearchCommand";
 
 export default function Header() {
   return (
