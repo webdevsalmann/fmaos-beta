@@ -12,15 +12,13 @@ import SelectControl from '@/components/ui/SelectControl';
 const ConfigController = ({ className }: { className?: string }) => {
     const { fmaosConfig, setFmaosConfig, toggles, setToggle } = useFmaosConfig();
 
-    const handleInputChange = useCallback((e: ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
+    const handleInputChangeNumber = useCallback((e: ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
         const { name, value } = e.target;
         setFmaosConfig(prevConfig => ({ ...prevConfig, [name]: Number(value) }));
-        // console.log("fmaosConfig:~ \n", fmaosConfig.transition);
     }, [setFmaosConfig]);
 
     const handleSelectChange = useCallback((name: string, value: string) => {
         setFmaosConfig(prevConfig => ({ ...prevConfig, [name]: value }));
-        // console.log("fmaosConfig:~ \n", fmaosConfig.transition);
     }, [setFmaosConfig]);
 
 
@@ -33,7 +31,7 @@ const ConfigController = ({ className }: { className?: string }) => {
                     name="initialOffset"
                     id="initialOffset"
                     value={fmaosConfig.initialOffset}
-                    onChange={handleInputChange}
+                    onChange={handleInputChangeNumber}
                 />
             </ControlWrapper>
 
@@ -51,14 +49,14 @@ const ConfigController = ({ className }: { className?: string }) => {
                         { value: "tween", label: "Tween" },
                         { value: "spring", label: "Spring" }
                     ]}
+                    mustInclude
                 />
-
 
                 <InputControl
                     label="Stiffness"
                     name="stiffness"
                     value={fmaosConfig.stiffness}
-                    onChange={handleInputChange}
+                    onChange={handleInputChangeNumber}
                     include={toggles.includeStiffness}
                     setInclude={(value) => setToggle('includeStiffness', value)}
                 />
@@ -67,7 +65,7 @@ const ConfigController = ({ className }: { className?: string }) => {
                     label="Damping"
                     name="damping"
                     value={fmaosConfig.damping}
-                    onChange={handleInputChange}
+                    onChange={handleInputChangeNumber}
                     include={toggles.includeDamping}
                     setInclude={(value) => setToggle('includeDamping', value)}
                 />
@@ -76,7 +74,7 @@ const ConfigController = ({ className }: { className?: string }) => {
                     label="Mass"
                     name="mass"
                     value={fmaosConfig.mass}
-                    onChange={handleInputChange}
+                    onChange={handleInputChangeNumber}
                     include={toggles.includeMass}
                     setInclude={(value) => setToggle('includeMass', value)}
                 />
@@ -85,7 +83,7 @@ const ConfigController = ({ className }: { className?: string }) => {
                     label="Duration"
                     name="duration"
                     value={fmaosConfig.duration}
-                    onChange={handleInputChange}
+                    onChange={handleInputChangeNumber}
                     include={toggles.includeDuration}
                     setInclude={(value) => setToggle('includeDuration', value)}
                 />
@@ -94,7 +92,7 @@ const ConfigController = ({ className }: { className?: string }) => {
                     label="Delay"
                     name="delay"
                     value={fmaosConfig.delay}
-                    onChange={handleInputChange}
+                    onChange={handleInputChangeNumber}
                     include={toggles.includeDelay}
                     setInclude={(value) => setToggle('includeDelay', value)}
                 />
@@ -103,11 +101,10 @@ const ConfigController = ({ className }: { className?: string }) => {
                     label="Repeat"
                     name="repeat"
                     value={fmaosConfig.repeat}
-                    onChange={handleInputChange}
+                    onChange={handleInputChangeNumber}
                     include={toggles.includeRepeat}
                     setInclude={(value) => setToggle('includeRepeat', value)}
                 />
-
 
                 <SelectControl
                     label="Repeat Type"
@@ -142,6 +139,38 @@ const ConfigController = ({ className }: { className?: string }) => {
                         { value: "backInOut", label: "Back In Out" }
                     ]}
                 />
+            </ControlWrapper>
+
+            <ControlWrapper>
+                <Label htmlFor='viewport'>Viewport</Label>
+
+                <SelectControl
+                    label="Once"
+                    name="once"
+                    value={fmaosConfig.once || false}
+                    onChange={handleSelectChange}
+                    include={toggles.includeOnce}
+                    setInclude={(value) => setToggle('includeOnce', value)}
+                    selectOptions={[
+                        { value: true, label: "True" },
+                        { value: false, label: "False" },
+                    ]}
+                    mustInclude
+                />
+
+                <SelectControl
+                    label="Amount"
+                    name="amount"
+                    value={fmaosConfig.amount || "all"}
+                    onChange={handleSelectChange}
+                    include={toggles.includeAmount}
+                    setInclude={(value) => setToggle('includeAmount', value)}
+                    selectOptions={[
+                        { value: "some", label: "Some" },
+                        { value: "all", label: "All" },
+                    ]}
+                />
+
             </ControlWrapper>
         </ControllerWrapper>
     );

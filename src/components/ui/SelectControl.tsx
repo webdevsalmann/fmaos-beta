@@ -11,7 +11,8 @@ interface InputControlProps {
     include: boolean;
     setInclude: (include: boolean) => void;
     type?: 'input' | 'select';
-    selectOptions?: { value: string, label: string }[];
+    selectOptions?: { value: any, label: any }[];
+    mustInclude?: boolean;
 }
 
 const SelectControl: React.FC<InputControlProps> = ({
@@ -21,16 +22,17 @@ const SelectControl: React.FC<InputControlProps> = ({
     onChange,
     include,
     setInclude,
-    selectOptions = []
+    selectOptions = [],
+    mustInclude
 }) => {
     return (
         <div className="mt-2 p-2 bg-muted dark:bg-muted/50 rounded-sm">
             <div className="flex-between">
                 <Label htmlFor={name}>{label}</Label>
-                <ToggleControlButton active={include} onClick={() => setInclude(!include)} />
+                {!mustInclude && < ToggleControlButton active={include} onClick={() => setInclude(!include)} />}
             </div>
 
-            {include && (
+            {(include || mustInclude) && (
                 <div className="mt-2">
                     <Select value={value} onValueChange={(val) => onChange(name, val)}>
                         <SelectTrigger>

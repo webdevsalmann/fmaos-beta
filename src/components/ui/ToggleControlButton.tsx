@@ -3,8 +3,8 @@ import { Button } from '@/components/ui/button';
 import { Plus, X } from 'lucide-react';
 
 interface ToggleControlButtonProps {
-    active: boolean;
-    onClick: () => void;
+    active?: boolean;
+    onClick?: () => void;
 }
 
 const ToggleControlButton: React.FC<ToggleControlButtonProps> = ({ active, onClick }) => (

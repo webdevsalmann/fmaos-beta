@@ -13,7 +13,8 @@ const variants = (initialOffset: number) => ({
 
 export default function FadeUp({ children, ...props }: FadeProps) {
     const { fmaosConfig } = useFmaosConfig();
-    console.log("FadeUp fmaosConfig Transition:~ \n", fmaosConfig.transition)
+    // console.log("FadeUp fmaosConfig Transition:~ \n", fmaosConfig.transition)
+    // console.log("FadeUp fmaosConfig Viewport:~ \n", fmaosConfig.viewport)
     return (
         <motion.div
             variants={variants(Number(fmaosConfig.initialOffset))}

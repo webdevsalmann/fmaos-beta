@@ -1,3 +1,4 @@
+"use client"
 import React, { createContext, useContext, useState, ReactNode } from 'react';
 
 interface FmaosConfigContextProps {
@@ -7,12 +8,13 @@ interface FmaosConfigContextProps {
     setToggle: (key: string, value: boolean) => void;
 }
 
-const initialFmaosConfig: {
+interface FmaosConfigProps {
     initialOffset: number;
     transition: object;
     viewport: object;
-    stiffness?: number;
+
     type?: string;
+    stiffness?: number;
     damping?: number;
     mass?: number;
     duration?: number;
@@ -21,23 +23,46 @@ const initialFmaosConfig: {
     repeatDelay?: number;
     repeatType?: string;
     easing?: string;
-} = {
+    once?: boolean;
+
+    margin?: string;
+    amount?: "some" | "all";
+}
+
+const initialFmaosConfig: FmaosConfigProps = {
     initialOffset: 50,
-    type: 'spring',
-    stiffness: undefined,
-    damping: undefined,
-    mass: undefined,
-    duration: undefined,
-    delay: undefined,
-    repeat: undefined,
+    transition: { type: "spring" },
+    viewport: { once: false },
+
+    type: "spring",
+    stiffness: 0,
+    damping: 0,
+    mass: 0,
+    duration: 0,
+    delay: 0,
+    repeat: 0,
     repeatType: "loop",
-    repeatDelay: undefined,
+    repeatDelay: 0,
     easing: "easeIn",
-    transition: {},
-    viewport: { once: false, amount: 0.5 },
+
+    once: false,
+    amount: "all",
 };
 
-const FmaosConfigContext = createContext<FmaosConfigContextProps | undefined>(undefined);
+const initialToggles = {
+    includeType: true,
+    includeStiffness: false,
+    includeDamping: false,
+    includeMass: false,
+    includeDuration: false,
+    includeDelay: false,
+    includeRepeat: false,
+    includeRepeatType: false,
+    includeEasing: false,
+
+    includeOnce: true,
+    includeAmount: false,
+};
 
 const buildTransition = (config: typeof initialFmaosConfig, toggles: { [key: string]: boolean }) => {
     const transition: { [key: string]: any } = {};
@@ -51,24 +76,21 @@ const buildTransition = (config: typeof initialFmaosConfig, toggles: { [key: str
     if (toggles.includeRepeatType) transition.repeatType = config.repeatType;
     if (toggles.includeRepeatDelay) transition.repeatDelay = config.repeatDelay;
     if (toggles.includeEasing) transition.ease = config.easing;
+
     return transition;
 };
 
+const buildViewport = (config: typeof initialFmaosConfig, toggles: { [key: string]: boolean }) => {
+    const viewport: { [key: string]: any } = {};
+    if (toggles.includeOnce) viewport.once = config.once;
+    if (toggles.includeAmount) viewport.amount = config.amount;
+    return viewport;
+};
+
+const FmaosConfigContext = createContext<FmaosConfigContextProps | undefined>(undefined);
+
 export const FmaosConfigProvider = ({ children }: { children: ReactNode }) => {
     const [fmaosConfig, setFmaosConfig] = useState(initialFmaosConfig);
-
-    const initialToggles = {
-        includeType: true,
-        includeStiffness: false,
-        includeDamping: false,
-        includeMass: false,
-        includeDuration: false,
-        includeDelay: false,
-        includeRepeat: false,
-        includeRepeatType: false,
-        includeEasing: false,
-    };
-
     const [toggles, setToggles] = useState(initialToggles);
 
     const setToggle = (key: string, value: boolean) => {
@@ -76,7 +98,11 @@ export const FmaosConfigProvider = ({ children }: { children: ReactNode }) => {
     };
 
     const values = {
-        fmaosConfig: { ...fmaosConfig, transition: buildTransition(fmaosConfig, toggles) },
+        fmaosConfig: {
+            ...fmaosConfig,
+            transition: buildTransition(fmaosConfig, toggles),
+            viewport: buildViewport(fmaosConfig, toggles),
+        },
         setFmaosConfig,
         toggles,
         setToggle,
