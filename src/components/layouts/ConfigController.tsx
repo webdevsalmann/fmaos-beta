@@ -5,10 +5,9 @@ import ControllerWrapper from '@/components/layouts/wrapper/ControllerWrapper';
 import { cn } from '@/lib/utils';
 import { Label } from '@/components/ui/label';
 import { Input } from '@/components/ui/input';
-import InputControl from '../ui/InputControl';
-import { useFmaosConfig } from '../providers/FmaosConfigProvider';
-import ToggleControlButton from '../ui/ToggleControlButton';
-import SelectControl from '../ui/SelectControl';
+import InputControl from '@/components/ui/InputControl';
+import { useFmaosConfig } from '@/components/providers/FmaosConfigProvider';
+import SelectControl from '@/components/ui/SelectControl';
 
 const ConfigController = ({ className }: { className?: string }) => {
     const { fmaosConfig, setFmaosConfig, toggles, setToggle } = useFmaosConfig();
