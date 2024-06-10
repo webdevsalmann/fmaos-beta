@@ -1,4 +1,4 @@
-import CodeBlockTab from "@/components/layouts/maincontent/CodeBlockTab";
+import CodeBlockTab from "@/components/layouts/animationcontent/CodeBlockTab";
 import demoDatas from "./demoDatas";
 
 const previewBlocks = {

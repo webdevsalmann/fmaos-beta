@@ -126,8 +126,8 @@ const navigationDatas = [
         href: "/flip",
         subCategories: [
             {
-                id: "fade-up",
-                title: "Fade Up",
+                id: "flip-up",
+                title: "Flip Up",
                 href: "/flip#flip-up",
             },
             {

@@ -5,7 +5,7 @@ export default function Header() {
   return (
     <header className="relative py-4 px-base h-16 flex items-center border-b overflow-hidden">
       <div className="size-full flex gap-base flex-between">
-        Header
+        <div className="font-bold text-lg">FMAOS</div>
         <SearchCommand />
         <ThemeToggleButton />
       </div>

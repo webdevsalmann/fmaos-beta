@@ -71,7 +71,7 @@
       @apply border-border;
     }
     body {
-      @apply mx-auto max-w-[1920px] min-h-screen bg-background text-foreground;
+      @apply relative mx-auto max-w-[1920px] min-h-screen bg-background text-foreground;
     }
   }
 

@@ -16,7 +16,7 @@ export default function FadeUpLeft({ children, ...props }: FadeProps) {
 
     return (
         <motion.div
-            variants={variants(Number(fmaosConfig.initialOffset))}
+            variants={variants(fmaosConfig.initialOffset)}
             initial={props.initial ?? "hidden"}
             whileInView={props.whileInView ?? "visible"}
             transition={props.transition ?? fmaosConfig.transition}

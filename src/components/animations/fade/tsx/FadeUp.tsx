@@ -15,7 +15,7 @@ export default function FadeUp({ children, ...props }: FadeProps) {
     const { fmaosConfig } = useFmaosConfig();
     return (
         <motion.div
-            variants={variants(Number(fmaosConfig.initialOffset))}
+            variants={variants(fmaosConfig.initialOffset)}
             initial={props.initial ?? "hidden"}
             whileInView={props.whileInView ?? "visible"}
             transition={props.transition ?? fmaosConfig.transition}
