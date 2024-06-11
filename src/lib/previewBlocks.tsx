@@ -1,6 +1,6 @@
-import CodeBlockTab from "@/components/layouts/animationcontent/CodeBlockTab";
-import DemoContainer from "@/components/layouts/demotab/DemoContainer";
-import Square from "@/components/layouts/demotab/Square";
+import CodeBlockTab from "@/components/layouts/animationcontent/demotab/CodeBlockTab";
+import DemoContainer from "@/components/layouts/animationcontent/demotab/DemoContainer";
+import Square from "@/components/layouts/animationcontent/demotab/Square";
 import {
     FadeUp,
     FadeDown,
