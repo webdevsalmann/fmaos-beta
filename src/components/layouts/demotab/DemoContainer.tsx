@@ -2,7 +2,7 @@
 import { useState, cloneElement, ReactElement } from "react";
 import { MotionProps } from 'framer-motion';
 import { cn } from "@/lib/utils";
-import ReloadButton from "@/components/ui/demo-objects/ReloadButton";
+import ReloadButton from "@/components/layouts/demotab/ReloadButton";
 
 interface DemoContainerProps {
     className?: string;

@@ -3,29 +3,17 @@ import { Download } from "lucide-react";
 import { Button, buttonVariants } from "@/components/ui/button";
 import { Dialog, DialogContent, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { cn } from "@/lib/utils";
+import { cn, handleDownloadFile } from "@/lib/utils";
 import SyntaxHighlighter from 'react-syntax-highlighter';
 import { nightOwl } from "react-syntax-highlighter/dist/esm/styles/hljs";
 import { useFmaosConfig } from '@/components/providers/FmaosConfigProvider';
-import { generateJSXFmaosConfig } from "@/components/helpers/generateJSXFmaosConfig";
-import { generateTSXFmaosConfig } from "@/components/helpers/generateTSXFmaosConfig";
+import { generateJSXFmaosConfig, generateTSXFmaosConfig } from "@/components/helpers/generateFmaosConfig";
 
 export default function DownloadConfigButton() {
     const { fmaosConfig, toggles } = useFmaosConfig();
 
-    const handleDownload = (content: string, fileName: string, fileType: string) => {
-        const blob = new Blob([content], { type: fileType });
-        const url = URL.createObjectURL(blob);
-        const a = document.createElement('a');
-        a.href = url;
-        a.download = fileName;
-        a.click();
-        URL.revokeObjectURL(url);
-    };
-
     const jsxContent = generateJSXFmaosConfig(fmaosConfig, toggles);
     const tsxContent = generateTSXFmaosConfig(fmaosConfig, toggles);
-
     return (
         <div className="sticky top-base">
             <Dialog>
@@ -57,14 +45,18 @@ export default function DownloadConfigButton() {
                             <Button
                                 className="mt-base"
                                 variant="secondary"
-                                onClick={() => handleDownload(jsxContent, "FmaosConfigProvider.jsx", "text/javascript")}
+                                onClick={() => handleDownloadFile({
+                                    file: { name: "FmaosConfigProvider.jsx", content: jsxContent }
+                                })}
                             >
                                 Download JSX
                             </Button>
                             <Button
                                 className="mt-base"
                                 variant="secondary"
-                                onClick={() => handleDownload(tsxContent, "FmaosConfigProvider.tsx", "text/typescript")}
+                                onClick={() => handleDownloadFile({
+                                    file: { name: "FmaosConfigProvider.tsx", content: tsxContent }
+                                })}
                             >
                                 Download TSX
                             </Button>

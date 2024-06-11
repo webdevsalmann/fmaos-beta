@@ -19,7 +19,7 @@ export default function SidebarWrapper({ children, className }: { children: Reac
             <div className="relative w-full">
                 <div className={cn(
                     "relative w-full h-full p-base",
-                    "lg:fixed lg:inset-0 lg:w-64"
+                    "lg:fixed lg:inset-0 lg:w-64",
                 )}>
                     <div className="relative">
                         <Button className={cn("absolute top-base z-40 lg:hidden", (sidebarOpen ? "right-base" : "-right-14"))} variant="secondary" size="icon" onClick={() => setSidebarOpen(!sidebarOpen)}>

@@ -3,9 +3,9 @@ import React, { ChangeEvent, useCallback } from 'react';
 import ControlWrapper from '@/components/layouts/configbar/ControlWrapper';
 import { Label } from '@/components/ui/label';
 import { Input } from '@/components/ui/input';
-import InputControl from '@/components/ui/InputControl';
+import InputControl from '@/components/layouts/configbar/InputControl';
 import { useFmaosConfig } from '@/components/providers/FmaosConfigProvider';
-import SelectControl from '@/components/ui/SelectControl';
+import SelectControl from '@/components/layouts/configbar/SelectControl';
 
 const ConfigController = ({ className }: { className?: string }) => {
     const { fmaosConfig, setFmaosConfig, toggles, setToggle } = useFmaosConfig();
