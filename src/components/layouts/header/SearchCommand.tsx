@@ -20,7 +20,7 @@ import {
   CommandSeparator,
   CommandShortcut,
 } from "@/components/ui/command"
-import navigationDatas from "@/lib/consts/navigationDatas"
+import navigationDatas from "@/lib/consts/WebsiteDatas"
 import Link from "next/link"
 
 export default function SearchCommand() {

@@ -15,7 +15,8 @@ const CopyToClipboardButton: React.FC<CopyToClipboardButtonProps> = ({ className
         <Tip toolTip={(<p className='my-0'>Copy to clipboard</p>)}>
             <div className={cn(buttonVariants({ variant: "outline", size: "icon" }),
                     "size-6 sm:size-8", className)}
-                onClick={() => copyToClipboard(text)}>
+                onClick={() => copyToClipboard(text)}
+                tabIndex={0}>
                 <span className='sr-only'>Copy to clipboard</span>
                 <Copy className='size-3 sm:size-4 pointer-events-none' />
             </div>

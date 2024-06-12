@@ -9,7 +9,7 @@ export default function ReloadButton({ className, onClick }: { className?: strin
       <div className={cn(buttonVariants({ variant: "outline", size: "icon" }),
         "size-6 sm:size-8", className)}
         onClick={onClick}
-      >
+        tabIndex={0}>
         <span className='sr-only'>Reload</span>
         <RefreshCcw className="size-3 sm:size-4 pointer-events-none" />
       </div>

@@ -1,36 +1,35 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# FMAOS - Framer Motion Animation On Scroll
 
-## Getting Started
+FMAOS is an animation library built on top of Framer Motion, designed to simplify your animation workflow and enhance your user interfaces.
 
-First, run the development server:
+## Introduction
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+Welcome to FMAOS (Framer Motion Animation On Scroll)!
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+FMAOS is an animation library built on top of Framer Motion, designed to simplify your animation workflow and enhance your user interfaces. With FMAOS, you can easily create captivating animations that respond to user interactions and scroll events. Whether you're a beginner or an experienced developer, FMAOS provides a seamless experience to bring your designs to life.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Installation
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+please Refer [installation guide](https://fmaos.vercel.app/installation).
 
-## Learn More
+## Key Features
 
-To learn more about Next.js, take a look at the following resources:
+- **Integration with Framer Motion:** Leveraging the power and flexibility of Framer Motion, FMAOS offers a rich set of animation capabilities to elevate your projects.
+- **Ease of Use:** With a straightforward animation files, FMAOS allows you to animate any component with minimal setup. Simply wrap your components with desired animation components.
+- **Customization:** Tailor animations to suit your project's aesthetic and functional requirements. Adjust timing, duration, and easing curves effortlessly with FMAOS's intuitive configuration options.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Usage
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+Getting started with FMAOS is quick and easy. Follow these steps to integrate animations into your project:
 
-## Deploy on Vercel
+1. **Installation:** Begin by installing FMAOS in your Next.js project. Refer to our [installation guide](/installation) for detailed instructions.
+2. **Additional Components:** You can additionally copy or download (.tsx OR .jsx) files directly from the animation tab.
+3. **Configuration:** Customize animation settings using FMAOS's configuration options and download directly, or you can define animation values directly into your FmaosConfigProvider file if already downloaded.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Contributing
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+We welcome contributions from the community! If you encounter any bugs, have feature requests, or want to contribute to the project, please check out our [Contribution Guidelines](CONTRIBUTING.md).
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.

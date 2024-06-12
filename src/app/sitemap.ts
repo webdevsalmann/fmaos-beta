@@ -16,6 +16,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'monthly',
     },
     {
+      url: `${siteData.baseUrl}/download-folder`,
+      changeFrequency: 'monthly',
+    },
+    {
       url: `${siteData.baseUrl}/fade`,
       changeFrequency: 'monthly',
     },
@@ -25,6 +29,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
     {
       url: `${siteData.baseUrl}/flip`,
+      changeFrequency: 'monthly',
+    },
+    {
+      url: `${siteData.baseUrl}/privacy-policy`,
       changeFrequency: 'monthly',
     },
     

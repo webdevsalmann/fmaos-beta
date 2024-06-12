@@ -1,27 +1,11 @@
-import previewBlocks from "@/lib/previewBlocks";
+import { fadeMd } from "@/lib/metadata/metadata"
+import GeneratePageAnimations from "@/components/layouts/maincontent/GeneratePageAnimations";
+
+export const metadata = {
+    title: fadeMd.title,
+    description: fadeMd.description
+}
 
 # Fade Animations
 
-## Fade Up
-{previewBlocks.fadeUp}
-
-## Fade Down
-{previewBlocks.fadeDown}
-
-## Fade Right
-{previewBlocks.fadeRight}
-
-## Fade Left
-{previewBlocks.fadeLeft}
-
-## Fade Up Right
-{previewBlocks.fadeUpRight}
-
-## Fade Up Left
-{previewBlocks.fadeUpLeft}
-
-## Fade Down Right
-{previewBlocks.fadeDownRight}
-
-## Fade Down Left
-{previewBlocks.fadeDownLeft}
+<GeneratePageAnimations animationCategory="fade" />

@@ -1,13 +1,13 @@
-import navigationDatas from "@/lib/consts/navigationDatas"
 import SidebarWrapper from "@/components/layouts/sidebar/SidebarWrapper"
 import Link from "next/link"
+import websiteDatas from "@/lib/consts/WebsiteDatas"
 
 export default function Sidebar({ className }: {
   className?: string
 }) {
   return (
     <SidebarWrapper className={className}>
-      {navigationDatas.map(item => (
+      {websiteDatas.map(item => (
         <nav className="mt-base space-y-2xs last-of-type:mb-base" key={"Sidebar" + item.id}>
           <Link className="text-lg font-semibold capitalize" href={item.href}>{item.category}</Link>
           <ul className="space-y-2xs">

@@ -1,11 +1,15 @@
 "use client"
 import React, { createContext, useContext, useState, ReactNode } from 'react';
+import { toast } from '../ui/use-toast';
 
 interface FmaosConfigContextProps {
     fmaosConfig: typeof initialFmaosConfig;
     setFmaosConfig: React.Dispatch<React.SetStateAction<typeof initialFmaosConfig>>;
     toggles: { [key: string]: boolean };
     setToggle: (key: string, value: boolean) => void;
+    resetFmaosConfig: () => void;
+    componentKey: any;
+    setComponentKey: any;
 }
 
 interface FmaosConfigProps {
@@ -71,7 +75,6 @@ const buildTransition = (config: typeof initialFmaosConfig, toggles: { [key: str
     if (toggles.includeRepeatType) transition.repeatType = config.repeatType;
     if (toggles.includeRepeatDelay) transition.repeatDelay = config.repeatDelay;
     if (toggles.includeEasing) transition.ease = config.easing;
-
     return transition;
 };
 
@@ -87,11 +90,19 @@ const FmaosConfigContext = createContext<FmaosConfigContextProps | undefined>(un
 export const FmaosConfigProvider = ({ children }: { children: ReactNode }) => {
     const [fmaosConfig, setFmaosConfig] = useState(initialFmaosConfig);
     const [toggles, setToggles] = useState(initialToggles);
+    const [componentKey, setComponentKey] = useState(0)
 
     const setToggle = (key: string, value: boolean) => {
         setToggles(prevToggles => ({ ...prevToggles, [key]: value }));
     };
 
+    const resetFmaosConfig = () => {
+        setFmaosConfig(initialFmaosConfig);
+        setToggles(initialToggles);
+        toast({
+            title: "Configuration reset successfully"
+        })
+    }
     const values = {
         fmaosConfig: {
             ...fmaosConfig,
@@ -99,9 +110,12 @@ export const FmaosConfigProvider = ({ children }: { children: ReactNode }) => {
             viewport: buildViewport(fmaosConfig, toggles),
         },
         setFmaosConfig,
+        resetFmaosConfig,
         toggles,
         setToggle,
-        setToggles
+        setToggles,
+        componentKey,
+        setComponentKey
     };
 
     return (

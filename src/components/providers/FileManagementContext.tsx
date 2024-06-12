@@ -32,17 +32,11 @@ export const FileManagementProvider = ({ children }: { children: ReactNode }) =>
         }
     }, [downloadableFiles, isInitialized]);
 
-    const addFile = (file: string) => {
-        setDownloadableFiles(prevFiles => [...prevFiles, file]);
-    };
+    const addFile = (file: string) => setDownloadableFiles(prevFiles => [...prevFiles, file]);
 
-    const removeFile = (fileName: string) => {
-        setDownloadableFiles(prevFiles => prevFiles.filter(file => file !== fileName));
-    };
+    const removeFile = (fileName: string) => setDownloadableFiles(prevFiles => prevFiles.filter(file => file !== fileName));
 
-    const clearFiles = () => {
-        setDownloadableFiles([]);
-    };
+    const clearFiles = () => setDownloadableFiles([]);
 
     const values = {
         downloadableFiles,

@@ -13,7 +13,7 @@ export default function Footer() {
             Copyright &copy; {year} FMAOS - Framer Motion Animation On Screen
           </div>
           <div className="mt-1">
-            <Link className="hover:text-foreground" href="/privacy-policy">Privacy-Policy</Link> / <Link className="hover:text-foreground" href="credits">Credits</Link> / developed by <Link className="hover:text-foreground" href="https://www.webdevsalmann.com" target="_blank">webdevsalmann</Link> 💖
+            <Link className="hover:text-foreground" href="/privacy-policy">Privacy-Policy</Link> / developed by <Link className="hover:text-foreground" href="https://www.webdevsalmann.com" target="_blank">webdevsalmann</Link> 💖
           </div>
         </div>
 

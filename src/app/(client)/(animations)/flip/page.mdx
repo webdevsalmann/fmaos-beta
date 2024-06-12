@@ -1,15 +1,12 @@
 import previewBlocks from "@/lib/previewBlocks";
+import { flipMd } from "@/lib/metadata/metadata"
+import GeneratePageAnimations from "@/components/layouts/maincontent/GeneratePageAnimations";
+
+export const metadata = {
+    title: flipMd.title,
+    description: flipMd.description
+}
 
 # Flip Animations
 
-## Flip Up
-{previewBlocks.flipUp}
-
-## Flip Down
-{previewBlocks.flipDown}
-
-## Flip Right
-{previewBlocks.flipRight}
-
-## Flip Left
-{previewBlocks.flipLeft}
+<GeneratePageAnimations animationCategory="flip" />

@@ -15,7 +15,7 @@ export default function DownloadConfigButton() {
     const jsxContent = generateJSXFmaosConfig(fmaosConfig, toggles);
     const tsxContent = generateTSXFmaosConfig(fmaosConfig, toggles);
     return (
-        <div className="sticky top-base">
+        <div className="my-2 sticky top-base">
             <Dialog>
                 <DialogTrigger className={cn(buttonVariants({ variant: "secondary" }), "relative w-full")}>
                     <Download className="mr-2 size-4 stroke-2" />

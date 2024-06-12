@@ -2,13 +2,19 @@ import { ReactNode } from "react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import SyntaxHighlighter from 'react-syntax-highlighter';
 import { nightOwl } from "react-syntax-highlighter/dist/esm/styles/hljs";
-import CopyToClipboardButton from "@/components/layouts/animationcontent/demotab/CopyToClipboardButton";
+import CopyToClipboardButton from "@/components/layouts/animationcontent/action-buttons/CopyToClipboardButton";
 import getCodeFile from "@/components/helpers/getCodeFile";
-import DownloadFileButton from "@/components/layouts/animationcontent/demotab/DownloadFileButton";
-import AddFileButton from "@/components/layouts/animationcontent/demotab/AddFileButton";
+import DownloadFileButton from "@/components/layouts/animationcontent/action-buttons/DownloadFileButton";
+import AddFileButton from "@/components/layouts/animationcontent/action-buttons/AddFileButton";
+import DemoContainer from "./DemoContainer";
 
-export default async function CodeBlockTab({ blockId, preview, jsxFilePath, tsxFilePath }: {
-    blockId: string, preview: ReactNode, jsxFilePath: any, tsxFilePath: any
+export default async function CodeBlockTab({ className, blockId, preview, jsxFilePath, tsxFilePath, animationElement }: {
+    className?: string;
+    blockId: string;
+    preview?: ReactNode;
+    jsxFilePath: any;
+    tsxFilePath: any;
+    animationElement: any;
 }) {
     const jsxFile: string = await getCodeFile(jsxFilePath)
     const tsxFile: string = await getCodeFile(tsxFilePath)
@@ -23,7 +29,10 @@ export default async function CodeBlockTab({ blockId, preview, jsxFilePath, tsxF
 
             {/* Preview Tab */}
             <TabsContent value={`preview-${blockId}`}>
-                {preview}
+                <DemoContainer
+                    className={className}
+                    animationElement={animationElement}
+                />
             </TabsContent>
 
             {/* jsx Code Tab */}

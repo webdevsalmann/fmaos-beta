@@ -27,6 +27,7 @@ const AddFileButton: React.FC<DownloadFileButtonProps> = ({ filePath, className 
             <div className={cn(buttonVariants({ variant: "outline", size: "icon" }),
                 "size-6 sm:size-8", isFileInFolder && "bg-muted", className)}
                 onClick={handleAddFile}
+                tabIndex={0}
             >
                 {isFileInFolder
                     ? <ConfirmationAlertDialog onClick={() => removeFile(filePath)}>

@@ -1,28 +1,29 @@
 "use client";
 import React, { ChangeEvent, useCallback } from 'react';
-import ControlWrapper from '@/components/layouts/configbar/ControlWrapper';
 import { Label } from '@/components/ui/label';
 import { Input } from '@/components/ui/input';
 import InputControl from '@/components/layouts/configbar/InputControl';
 import { useFmaosConfig } from '@/components/providers/FmaosConfigProvider';
 import SelectControl from '@/components/layouts/configbar/SelectControl';
 
-const ConfigController = ({ className }: { className?: string }) => {
-    const { fmaosConfig, setFmaosConfig, toggles, setToggle } = useFmaosConfig();
+const ConfigController = () => {
+    const { fmaosConfig, setFmaosConfig, toggles, setToggle, setComponentKey } = useFmaosConfig();
 
     const handleInputChangeNumber = useCallback((e: ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
         const { name, value } = e.target;
         setFmaosConfig(prevConfig => ({ ...prevConfig, [name]: Number(value) }));
-    }, [setFmaosConfig]);
+        setComponentKey((prevKey: any) => Number(prevKey) + 1)
+    }, [setFmaosConfig, setComponentKey]);
 
     const handleSelectChange = useCallback((name: string, value: string) => {
         setFmaosConfig(prevConfig => ({ ...prevConfig, [name]: value }));
-    }, [setFmaosConfig]);
+        setComponentKey((prevKey: any) => Number(prevKey) + 1)
+    }, [setFmaosConfig, setComponentKey]);
 
 
     return (
         <div className="divide-y">
-            <ControlWrapper>
+            <div className="p-2">
                 <div className="p-2 bg-muted dark:bg-muted/50 grid grid-cols-2 gap-base items-center rounded-sm">
                     <Label htmlFor='initialOffset'>Initial Offset</Label>
                     <Input
@@ -33,9 +34,9 @@ const ConfigController = ({ className }: { className?: string }) => {
                         onChange={handleInputChangeNumber}
                     />
                 </div>
-            </ControlWrapper>
+            </div>
 
-            <ControlWrapper>
+            <div className="p-2">
                 <Label htmlFor='transition'>Transition</Label>
 
                 <SelectControl
@@ -139,9 +140,9 @@ const ConfigController = ({ className }: { className?: string }) => {
                         { value: "backInOut", label: "Back In Out" }
                     ]}
                 />
-            </ControlWrapper>
+            </div>
 
-            <ControlWrapper>
+            <div className="p-2">
                 <Label htmlFor='viewport'>Viewport</Label>
 
                 <SelectControl
@@ -171,7 +172,7 @@ const ConfigController = ({ className }: { className?: string }) => {
                     ]}
                 />
 
-            </ControlWrapper>
+            </div>
         </div>
     );
 };

@@ -1,33 +1,12 @@
 import previewBlocks from "@/lib/previewBlocks";
+import { zoomMd } from "@/lib/metadata/metadata"
+import GeneratePageAnimations from "@/components/layouts/maincontent/GeneratePageAnimations";
+
+export const metadata = {
+    title: zoomMd.title,
+    description: zoomMd.description
+}
 
 # Zoom Animations
 
-## Zoom In
-{previewBlocks.zoomIn}
-
-## Zoom Out
-{previewBlocks.zoomOut}
-
-## Zoom In Up
-{previewBlocks.zoomInUp}
-
-## Zoom In Down
-{previewBlocks.zoomInDown}
-
-## Zoom In Left
-{previewBlocks.zoomInLeft}
-
-## Zoom In Right
-{previewBlocks.zoomInRight}
-
-## Zoom Out Up
-{previewBlocks.zoomOutUp}
-
-## Zoom Out Down
-{previewBlocks.zoomOutDown}
-
-## Zoom Out Left
-{previewBlocks.zoomOutLeft}
-
-## Zoom Out Right
-{previewBlocks.zoomOutRight}
+<GeneratePageAnimations animationCategory="zoom" />
