@@ -1,9 +1,9 @@
 "use client"
+import { TooltipProvider } from "@radix-ui/react-tooltip"
 import { Toaster } from "@/components/ui/toaster"
 import ThemeProvider from "@/components/providers/ThemeProvider"
 import { FmaosConfigProvider } from "@/components/providers/FmaosConfigProvider"
-import { TooltipProvider } from "@radix-ui/react-tooltip"
-import { FileManagementProvider } from "./FileManagementContext"
+import { FileManagementProvider } from "@/components/providers/FileManagementContext"
 
 export default function Providers({ children }: { children: React.ReactNode }) {
     return (

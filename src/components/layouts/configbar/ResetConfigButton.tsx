@@ -1,9 +1,9 @@
 "use client"
+import { RotateCcw } from "lucide-react";
 import { useFmaosConfig } from "@/components/providers/FmaosConfigProvider";
 import ConfirmationAlertDialog from "@/components/ui/ConfirmationAlertDialog";
 import { buttonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
-import { RotateCcw } from "lucide-react";
 
 export default function ResetConfigButton() {
   const { resetFmaosConfig } = useFmaosConfig()

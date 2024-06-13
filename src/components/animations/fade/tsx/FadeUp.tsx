@@ -4,6 +4,7 @@ import { useFmaosConfig } from '@/components/providers/FmaosConfigProvider';
 
 interface FadeProps extends MotionProps {
     children: React.ReactNode;
+    className?: string;
 }
 
 const variants = (initialOffset: number) => ({
@@ -11,10 +12,11 @@ const variants = (initialOffset: number) => ({
     visible: { opacity: 1, y: 0 }
 });
 
-export default function FadeUp({ children, ...props }: FadeProps) {
+export default function FadeUp({ children, className, ...props }: FadeProps) {
     const { fmaosConfig } = useFmaosConfig();
     return (
         <motion.div
+            className={className}
             variants={variants(fmaosConfig.initialOffset)}
             initial={props.initial ?? "hidden"}
             whileInView={props.whileInView ?? "visible"}

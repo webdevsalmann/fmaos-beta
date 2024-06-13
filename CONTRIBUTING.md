@@ -2,10 +2,6 @@
 
 Thank you for your interest in contributing to FMAOS! We welcome contributions from the community and are excited to collaborate with you. Before you start, please take a moment to read the following guidelines.
 
-## Code of Conduct
-
-By participating in this project, you agree to abide by our [Code of Conduct](CODE_OF_CONDUCT.md). Please ensure that you adhere to these standards in all your interactions.
-
 ## How Can I Contribute?
 
 ### Reporting Bugs
@@ -24,17 +20,6 @@ We welcome suggestions for new features and enhancements. To suggest an enhancem
 - A clear and descriptive title.
 - A detailed description of the enhancement.
 - Any relevant examples or mockups.
-
-### Submitting Pull Requests
-
-If you want to contribute code to FMAOS, please follow these steps:
-
-1. **Fork the Repository**: Fork the FMAOS repository to your GitHub account.
-2. **Create a Branch**: Create a new branch for your feature or bugfix (`git checkout -b feature/your-feature` or `git checkout -b bugfix/your-bugfix`).
-3. **Make Changes**: Make your changes in the new branch.
-4. **Commit Changes**: Commit your changes with a clear and descriptive commit message (`git commit -m "Add feature/fix bug"`)
-5. **Push to Branch**: Push your changes to your forked repository (`git push origin feature/your-feature` or `git push origin bugfix/your-bugfix`).
-6. **Create Pull Request**: Open a pull request against the `main` branch of the original repository.
 
 ### Adding New Animation
 
@@ -121,8 +106,8 @@ If you want to add a new animation to FMAOS, follow these detailed steps:
 #### 5. Add new page (if necessary)
 
 - If you are adding an animation to an existing category, you don't need to add a new page.
-If you are creating a new category of animation, create a new folder inside `@/src/app/(client)/(animations)` with an appropriate name matching the newly added category name in websiteDatas.
-Then, add a new `page.mdx` file (refer to `@/src/app/(client)/(animations)/fade/page.mdx` for an example).
+If you are creating a new category of animation, create a new folder inside `@/app/(client)/(animations)` with an appropriate name matching the newly added category name in websiteDatas.
+Then, add a new `page.mdx` file (refer to `@/app/(client)/(animations)/fade/page.mdx` for an example).
   
 #### 6. Test Your Animation
 
@@ -138,6 +123,17 @@ Then, add a new `page.mdx` file (refer to `@/src/app/(client)/(animations)/fade/
 - Open a pull request against the main branch of the original repository.
 - Provide a clear description of the animation you added and any relevant details.
 
+### Submitting Pull Requests
+
+If you want to contribute code to FMAOS, please follow these steps:
+
+1. **Fork the Repository**: Fork the FMAOS repository to your GitHub account.
+2. **Create a Branch**: Create a new branch for your feature or bugfix (`git checkout -b feature/your-feature` or `git checkout -b bugfix/your-bugfix`).
+3. **Make Changes**: Make your changes in the new branch.
+4. **Commit Changes**: Commit your changes with a clear and descriptive commit message (`git commit -m "Add feature/fix bug"`)
+5. **Push to Branch**: Push your changes to your forked repository (`git push origin feature/your-feature` or `git push origin bugfix/your-bugfix`).
+6. **Create Pull Request**: Open a pull request against the `main` branch of the original repository.
+
 ### Code Style and Guidelines
 
 - Follow the existing code style and conventions.
@@ -146,10 +142,10 @@ Then, add a new `page.mdx` file (refer to `@/src/app/(client)/(animations)/fade/
 
 ### Reviewing and Merging Pull Requests
 
-- All pull requests will be reviewed by the project me.
+- All pull requests will be reviewed by me.
 - Pull requests must pass all tests and checks before they can be merged.
 - Please be patient and responsive to feedback during the review process.
 
 ## Thank You!
 
-Thank you for contributing to FMAOS! Your support and involvement are greatly appreciated. If you have any questions or need assistance, feel free to reach out to the project me.
+Thank you for contributing to FMAOS! Your support and involvement are greatly appreciated. If you have any questions or need assistance, feel free to reach out to me.

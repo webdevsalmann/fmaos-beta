@@ -17,7 +17,7 @@ export const introductionMd = {
 
 export const installationMd = {
     title: "Installation",
-    description: "Installation process to use FMAOS easily and efficiently"
+    description: "Easily install FMAOS animations directly into your project effeciently and quick start your project."
 }
 
 export const privacyPolicyMd = {

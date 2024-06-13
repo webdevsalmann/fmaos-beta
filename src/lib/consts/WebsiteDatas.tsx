@@ -1,5 +1,5 @@
-import CodeBlockTab from "@/components/layouts/animationcontent/CodeBlockTab";
-import Square from "@/components/layouts/animationcontent/Square";
+import CodeBlockTab from "@/components/layouts/maincontent/animationblock/CodeBlockTab";
+import Square from "@/components/layouts/maincontent/animationblock/Square";
 
 import FadeUp from "@/components/animations/fade/tsx/FadeUp";
 import FadeDown from "@/components/animations/fade/tsx/FadeDown";
@@ -135,7 +135,7 @@ const websiteDatas: Category[] = [
                     jsxFilePath="src/components/animations/fade/jsx/FadeRight.jsx"
                     tsxFilePath="src/components/animations/fade/tsx/FadeRight.tsx"
                     className={colorGradiant.orange}
-                    animationElement={<FadeDown><Square /></FadeDown>}
+                    animationElement={<FadeRight><Square /></FadeRight>}
                 />,
             },
             {
@@ -383,6 +383,6 @@ const websiteDatas: Category[] = [
         ]
     },
     // Add other categories here
-];
+]; 
 
 export default websiteDatas;

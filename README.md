@@ -1,12 +1,10 @@
+<div align="center">
+<img src="https://fmaos.vercel.app/fmaos-logo.png" alt="Fmaos Logo" />
+
 # FMAOS - Framer Motion Animation On Scroll
 
 FMAOS is an animation library built on top of Framer Motion, designed to simplify your animation workflow and enhance your user interfaces.
-
-## Introduction
-
-Welcome to FMAOS (Framer Motion Animation On Scroll)!
-
-FMAOS is an animation library built on top of Framer Motion, designed to simplify your animation workflow and enhance your user interfaces. With FMAOS, you can easily create captivating animations that respond to user interactions and scroll events. Whether you're a beginner or an experienced developer, FMAOS provides a seamless experience to bring your designs to life.
+</div>
 
 ## Installation
 
@@ -16,7 +14,7 @@ please Refer [installation guide](https://fmaos.vercel.app/installation).
 
 - **Integration with Framer Motion:** Leveraging the power and flexibility of Framer Motion, FMAOS offers a rich set of animation capabilities to elevate your projects.
 - **Ease of Use:** With a straightforward animation files, FMAOS allows you to animate any component with minimal setup. Simply wrap your components with desired animation components.
-- **Customization:** Tailor animations to suit your project's aesthetic and functional requirements. Adjust timing, duration, and easing curves effortlessly with FMAOS's intuitive configuration options.
+- **Customization:** Tailor animations to suit your project's aesthetic and functional requirements. Adjust timing, duration, and easing and many more effortlessly with FMAOS's intuitive configuration options.
 
 ## Usage
 

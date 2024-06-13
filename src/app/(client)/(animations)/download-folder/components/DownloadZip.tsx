@@ -1,17 +1,17 @@
 "use client";
 
-import { useFileManagement } from "@/components/providers/FileManagementContext";
-import { Button, buttonVariants } from "@/components/ui/button";
-import { Download } from "lucide-react";
-import { cn } from "@/lib/utils";
 import Link from "next/link";
-import { useFmaosConfig } from "@/components/providers/FmaosConfigProvider";
-import getCodeFile from "@/components/helpers/getCodeFile";
-import { generateJSXFmaosConfig, generateTSXFmaosConfig } from "@/components/helpers/generateFmaosConfig";
-import AnimationFiles from "./AnimationFiles";
-import ConfigFile from "./ConfigFile";
 import JSZip from "jszip";
 import { saveAs } from "file-saver";
+import { Download } from "lucide-react";
+import getCodeFile from "@/components/helpers/getCodeFile";
+import { Button, buttonVariants } from "@/components/ui/button";
+import { useFileManagement } from "@/components/providers/FileManagementContext";
+import { useFmaosConfig } from "@/components/providers/FmaosConfigProvider";
+import { generateJSXFmaosConfig, generateTSXFmaosConfig } from "@/components/helpers/generateFmaosConfig";
+import AnimationFiles from "@/app/(client)/(animations)/download-folder/components/AnimationFiles";
+import ConfigFile from "@/app/(client)/(animations)/download-folder/components/ConfigFile";
+import { cn } from "@/lib/utils";
 
 interface FileContent {
   name: string;

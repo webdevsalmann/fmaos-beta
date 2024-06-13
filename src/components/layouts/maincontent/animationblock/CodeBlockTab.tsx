@@ -1,12 +1,12 @@
 import { ReactNode } from "react";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import SyntaxHighlighter from 'react-syntax-highlighter';
 import { nightOwl } from "react-syntax-highlighter/dist/esm/styles/hljs";
-import CopyToClipboardButton from "@/components/layouts/animationcontent/action-buttons/CopyToClipboardButton";
 import getCodeFile from "@/components/helpers/getCodeFile";
-import DownloadFileButton from "@/components/layouts/animationcontent/action-buttons/DownloadFileButton";
-import AddFileButton from "@/components/layouts/animationcontent/action-buttons/AddFileButton";
-import DemoContainer from "./DemoContainer";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import CopyToClipboardButton from "@/components/layouts/maincontent/animationblock/action-buttons/CopyToClipboardButton";
+import DownloadFileButton from "@/components/layouts/maincontent/animationblock/action-buttons/DownloadFileButton";
+import AddFileButton from "@/components/layouts/maincontent/animationblock/action-buttons/AddFileButton";
+import DemoContainer from "@/components/layouts/maincontent/animationblock/DemoContainer";
 
 export default async function CodeBlockTab({ className, blockId, preview, jsxFilePath, tsxFilePath, animationElement }: {
     className?: string;

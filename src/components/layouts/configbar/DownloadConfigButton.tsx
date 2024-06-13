@@ -1,13 +1,13 @@
 "use client"
 import { Download } from "lucide-react";
-import { Button, buttonVariants } from "@/components/ui/button";
-import { Dialog, DialogContent, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { cn, handleDownloadFile } from "@/lib/utils";
 import SyntaxHighlighter from 'react-syntax-highlighter';
 import { nightOwl } from "react-syntax-highlighter/dist/esm/styles/hljs";
 import { useFmaosConfig } from '@/components/providers/FmaosConfigProvider';
+import { Button, buttonVariants } from "@/components/ui/button";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { Dialog, DialogContent, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
 import { generateJSXFmaosConfig, generateTSXFmaosConfig } from "@/components/helpers/generateFmaosConfig";
+import { cn, handleDownloadFile } from "@/lib/utils";
 
 export default function DownloadConfigButton() {
     const { fmaosConfig, toggles } = useFmaosConfig();

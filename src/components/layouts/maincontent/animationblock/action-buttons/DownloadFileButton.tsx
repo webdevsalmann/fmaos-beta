@@ -1,8 +1,9 @@
 "use client"
-import { buttonVariants } from "@/components/ui/button";
+
 import { Download } from "lucide-react";
-import { cn, handleDownloadFile, } from "@/lib/utils";
+import { buttonVariants } from "@/components/ui/button";
 import Tip from "@/components/ui/Tip";
+import { cn, handleDownloadFile, } from "@/lib/utils";
 
 interface DownloadFileButtonProps {
     filePath: string;

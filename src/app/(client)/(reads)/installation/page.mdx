@@ -1,12 +1,21 @@
 import { installationMd } from "@/lib/metadata/metadata"
+import SyntaxHighlighter from 'react-syntax-highlighter';
+import { nightOwl } from "react-syntax-highlighter/dist/esm/styles/hljs";
 import StepImage from './StepImage'
+import AnimatedCard from './AnimatedCard'
 
 export const metadata = {
-  title: installationMd.title,
-  description: installationMd.description
+    title: installationMd.title,
+    description: installationMd.description
 }
 
 # Installation
+
+## Prerequisite
+Start by installing framer-motion
+```bash
+npm install framer-motion
+```
 
 ## Step 1
 Select and add all the animations (either .jsx or .tsx files) you want to use to the folder.
@@ -26,11 +35,43 @@ Extract the downloaded zip folder and add its contents to your development envir
 
 ## Step 4
 Integrate FMAOS into your Next.js application by wrapping the `FmaosConfigProvider` component around your main application component. This step enables you to configure and manage animations across your project.
+<SyntaxHighlighter language="typescript" style={nightOwl} wrapLongLines >
+  {`import { FmaosConfigProvider } from "@/components/fmaos-animations/FmaosConfigProvider";
 
-<StepImage imageName="step-4" />
+export default function RootLayout({ children }: Readonly<{
+    children: React.ReactNode;
+}>) {
+    return (
+        <html lang="en">
+            <body>
+                <FmaosConfigProvider>
+                    {children}
+                </FmaosConfigProvider>
+            </body>
+        </html>
+    )
+}`}
+</SyntaxHighlighter>
+
 
 ## Step 5
 Import the desired animation file into your project and wrap it around the component you wish to animate. This step enables you to apply animations to specific components with ease.
+<SyntaxHighlighter language="typescript" style={nightOwl} wrapLongLines >
+  {`import FadeUp from "@/components/fmaos-animations/FadeUp";
+import ZoomIn from "@/components/fmaos-animations/ZoomIn";
+import Card from "@/components/ui/Card";
+
+export default function AnimatedCard() {
+    return (
+        <FadeUp>
+            <ZoomIn>
+                <Card />
+            </ZoomIn>
+        </FadeUp>
+    )
+}`}
+</SyntaxHighlighter>
 
 ## Step 6
 Experience the magic of animations in your web application! Enjoy the seamless and captivating animations brought to life by FMAOS.
+<AnimatedCard/>

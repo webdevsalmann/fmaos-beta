@@ -1,10 +1,11 @@
 "use client"
-import { buttonVariants } from "@/components/ui/button";
+
 import { FileMinus2, FilePlus2 } from "lucide-react";
-import { cn } from "@/lib/utils";
 import { useFileManagement } from "@/components/providers/FileManagementContext";
-import Tip from "@/components/ui/Tip";
+import { buttonVariants } from "@/components/ui/button";
 import ConfirmationAlertDialog from "@/components/ui/ConfirmationAlertDialog";
+import Tip from "@/components/ui/Tip";
+import { cn } from "@/lib/utils";
 
 interface DownloadFileButtonProps {
     filePath: string;

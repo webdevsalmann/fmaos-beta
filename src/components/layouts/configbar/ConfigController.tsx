@@ -3,8 +3,8 @@ import React, { ChangeEvent, useCallback } from 'react';
 import { Label } from '@/components/ui/label';
 import { Input } from '@/components/ui/input';
 import InputControl from '@/components/layouts/configbar/InputControl';
-import { useFmaosConfig } from '@/components/providers/FmaosConfigProvider';
 import SelectControl from '@/components/layouts/configbar/SelectControl';
+import { useFmaosConfig } from '@/components/providers/FmaosConfigProvider';
 
 const ConfigController = () => {
     const { fmaosConfig, setFmaosConfig, toggles, setToggle, setComponentKey } = useFmaosConfig();

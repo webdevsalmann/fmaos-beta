@@ -1,7 +1,7 @@
 import { buttonVariants } from "@/components/ui/button";
-import { cn } from "@/lib/utils";
 import { RefreshCcw } from "lucide-react";
 import Tip from "@/components/ui/Tip";
+import { cn } from "@/lib/utils";
 
 export default function ReloadButton({ className, onClick }: { className?: string, onClick: () => void }) {
   return (

@@ -1,9 +1,9 @@
+import { FileMinus2 } from "lucide-react";
 import { useFileManagement } from "@/components/providers/FileManagementContext";
 import ConfirmationAlertDialog from "@/components/ui/ConfirmationAlertDialog";
-import Tip from "@/components/ui/Tip";
 import { buttonVariants } from "@/components/ui/button";
+import Tip from "@/components/ui/Tip";
 import { cn } from "@/lib/utils";
-import { FileMinus2 } from "lucide-react";
 
 export default function AnimationFiles() {
     const { downloadableFiles, removeFile } = useFileManagement();

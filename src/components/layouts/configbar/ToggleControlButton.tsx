@@ -1,6 +1,6 @@
 import React from 'react';
-import { Button } from '@/components/ui/button';
 import { Plus, X } from 'lucide-react';
+import { Button } from '@/components/ui/button';
 
 interface ToggleControlButtonProps {
     active?: boolean;

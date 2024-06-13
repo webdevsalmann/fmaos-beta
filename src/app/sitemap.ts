@@ -12,7 +12,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'monthly',
     },
     {
-      url: `${siteData.baseUrl}/example`,
+      url: `${siteData.baseUrl}/installation`,
       changeFrequency: 'monthly',
     },
     {

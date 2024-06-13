@@ -1,6 +1,6 @@
 "use client"
 import React, { createContext, useContext, useState, ReactNode } from 'react';
-import { toast } from '../ui/use-toast';
+import { toast } from '@/components/ui/use-toast';
 
 interface FmaosConfigContextProps {
     fmaosConfig: typeof initialFmaosConfig;
@@ -32,7 +32,7 @@ interface FmaosConfigProps {
 }
 
 const initialFmaosConfig: FmaosConfigProps = {
-    initialOffset: 50,
+    initialOffset: 100,
     transition: { type: "spring" },
     viewport: { once: false },
     type: "spring",

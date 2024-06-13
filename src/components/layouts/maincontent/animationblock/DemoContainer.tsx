@@ -1,8 +1,8 @@
 "use client";
 import { useState, cloneElement, ReactElement, useEffect } from "react";
-import { cn } from "@/lib/utils";
-import ReloadButton from "@/components/layouts/animationcontent/action-buttons/ReloadButton";
 import { useFmaosConfig } from "@/components/providers/FmaosConfigProvider";
+import ReloadButton from "@/components/layouts/maincontent/animationblock/action-buttons/ReloadButton";
+import { cn } from "@/lib/utils";
 
 interface DemoContainerProps {
     className?: string;

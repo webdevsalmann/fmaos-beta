@@ -1,7 +1,7 @@
 import React from "react";
-import Footer from "@/components/layouts/footer/Footer";
 import Sidebar from "@/components/layouts/sidebar/Sidebar";
 import Header from "@/components/layouts/header/Header";
+import Footer from "@/components/layouts/footer/Footer";
 
 export default function DashboardLayout({
     children,

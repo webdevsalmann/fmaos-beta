@@ -1,6 +1,6 @@
+import React from "react";
 import ConfigBar from "@/components/layouts/configbar/ConfigBar";
 import PaginationButton from "@/components/layouts/maincontent/PaginationButton";
-import React from "react";
 
 export default function AnimationLayout({
     children,
@@ -10,7 +10,7 @@ export default function AnimationLayout({
     return (
         <div className="flex w-full">
             <main className="p-base w-full">
-                <article className="prose w-full max-w-full prose-slate dark:prose-invert prose-pre:my-0">
+                <article className="w-full max-w-full apply-prose">
                     {children}
                     <PaginationButton />
                 </article>

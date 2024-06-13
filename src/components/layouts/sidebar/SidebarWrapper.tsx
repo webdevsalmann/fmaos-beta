@@ -1,9 +1,9 @@
 "use client"
-import { cn } from "@/lib/utils";
 import { ReactNode, useState } from "react";
-import { Button } from "@/components/ui/button";
 import { SidebarClose, SidebarOpen } from "lucide-react";
 import { ScrollArea } from "@/components/ui/scroll-area";
+import { Button } from "@/components/ui/button";
+import { cn } from "@/lib/utils";
 
 export default function SidebarWrapper({ children, className }: { children: ReactNode; className?: string }) {
     const [sidebarOpen, setSidebarOpen] = useState(false)
@@ -28,6 +28,7 @@ export default function SidebarWrapper({ children, className }: { children: Reac
                                 :
                                 <SidebarOpen className="size-4 pointer-events-none" />
                             }
+                            <span className="sr-only">Sidebar Toggle</span>
                         </Button>
                         <ScrollArea className="relative h-[calc(100vh_-_2rem)]">
 

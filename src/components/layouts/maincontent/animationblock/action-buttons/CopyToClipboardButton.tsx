@@ -1,9 +1,9 @@
 "use client"
-import React from 'react';
+
 import { Copy } from 'lucide-react';
 import { buttonVariants } from '@/components/ui/button';
-import { cn, copyToClipboard } from '@/lib/utils';
 import Tip from '@/components/ui/Tip';
+import { cn, copyToClipboard } from '@/lib/utils';
 
 interface CopyToClipboardButtonProps {
     text: any;
